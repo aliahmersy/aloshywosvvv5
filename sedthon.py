@@ -821,7 +821,34 @@ async def _(event):
         await asyncio.sleep(animation_interval)
         await event.edit(animation_chars[i % 17])
 
-
+@sedthon.on(events.NewMessage(outgoing=True, pattern=r"\.حيوانات"))
+async def _(event):
+    event = await event.edit("حسناً")
+    animation_interval = 0.2
+    animation_ttl = range(96)
+    await event.edit("يتم ..")
+    animation_chars = [
+        "🐶.",
+        "🐱🐭",
+        "🐹🐰🦊",
+        "🐻🐼🐻‍❄️🐨",
+        "🐯🦁🐮🐷🐽",
+        "🐸🐵🙈🙉🙊🐒",
+        "🐔🐧🐦🐤🐣🐥🪿",
+        "🦆🐦‍⬛️🦅🦉🦇🐺🐗🐴",
+        "🦄🫎🐝🪱🐛🦋🐌",
+        "🐌🐞🐜🪰🪲🪳",
+        "🦟🦗🕷🕸🐏",
+        "🦂🐢🐍🦎",
+        "🦖🦕🐙",
+        "🦑🪼",
+        "🦧."
+    ]
+    for i in animation_ttl:
+        await asyncio.sleep(animation_interval)
+        await event.edit(animation_chars[i % 17])
+        
+        
 @sedthon.on(events.NewMessage(outgoing=True, pattern=r"\.قلوب"))
 async def _(event):
     event = await event.edit("حسناً")
